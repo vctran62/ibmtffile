@@ -1,5 +1,32 @@
+#  Commented by Vinh
+#terraform {
+#  required_providers {
+#   azurerm = {
+#      source  = "hashicorp/azurerm"
+#      version = "=2.52.0"
+#    }
+#  }
+#  backend "azurerm" {
+#    resource_group_name   = "rg-sc-cdw-vpt-tools-01"
+#    storage_account_name  = "sttoolsautomation"
+#    container_name        = "toolsterraform"
+#    key                   = "tools.tfstate"
+#   }
+#}
+#provider "azurerm" {
+#  features {}
+#}
+#  The above block is commented out by Vinh
+
+
 provider "azurerm" {
-  features {}
+  
+  subscription_id = "${var.subscriptionId}"
+  client_id       = "${var.clientId}"
+  client_secret   = "${var.clientSecret}"
+  tenant_id       = "${var.tenantId}"
+
+  version = "=1.44.0"
 }
 
 ##### Create Resource Group #####
@@ -170,7 +197,7 @@ resource "azurerm_windows_virtual_machine" "vm-sc-vpttools02" {
   name                            = "sc-vpttools02"
   resource_group_name             = azurerm_network_interface.nic-01-sc-vpttools02.resource_group_name
   location                        = azurerm_network_interface.nic-01-sc-vpttools02.location
-  size                            = "Standard_B2s"
+  size                            = "Standard_F1s"
   admin_username                  = "vmadmin"
   admin_password                  = " "
   tags                            = {
