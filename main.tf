@@ -72,7 +72,7 @@ resource "azurerm_network_interface" "nic-01-sc-vpttools01" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "/subscriptions/4524c968-952e-4958-b76b-acf5f38bef72/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
+    subnet_id                     = "/subscriptions/48c3ee89-06d2-4f41-bedb-22603be48a43/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
     private_ip_address_allocation = "Dynamic"
      
   }
@@ -119,7 +119,7 @@ resource "azurerm_network_interface" "nic-01-sc-vptilmt01" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "/subscriptions/4524c968-952e-4958-b76b-acf5f38bef72/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
+    subnet_id                     = "/subscriptions/48c3ee89-06d2-4f41-bedb-22603be48a43/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
     private_ip_address_allocation = "Dynamic"
      
   }
@@ -189,7 +189,7 @@ variable "tenantId" {}
 
 #  ip_configuration {
 #    name                          = "internal"
-#    subnet_id                     = "/subscriptions/4524c968-952e-4958-b76b-acf5f38bef72/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
+#    subnet_id                     = "/subscriptions/48c3ee89-06d2-4f41-bedb-22603be48a43/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
 #
 #    private_ip_address_allocation = "Dynamic"
 #     
