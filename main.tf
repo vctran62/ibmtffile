@@ -18,21 +18,18 @@
 #}
 #  The above block is commented out by Vinh
 
-
 provider "azurerm" {
-  
-  subscription_id = "${var.subscriptionId}"
+  subscription_id = "${var.subscriptionId}"  
   client_id       = "${var.clientId}"
   client_secret   = "${var.clientSecret}"
   tenant_id       = "${var.tenantId}"
-
-  version = "=1.44.0"
+  features {}
 }
 
 ##### Create Resource Group #####
 resource "azurerm_resource_group" "rg-tools" {
   name     = "rg-sc-cdw-vpt-dev-tools-01"
-  location = "South Central US"
+  location = "eastus"
 }
 
 
@@ -70,12 +67,12 @@ resource "azurerm_subnet_network_security_group_association" "assoc-tools-01" {
 ##### Linux VM Start #####
 resource "azurerm_network_interface" "nic-01-sc-vpttools01" {
   name                = "nic-01-sc-vpttools01"
-  location            = "South Central US"
+  location            = "eastus"
   resource_group_name = "rg-sc-cdw-vpt-dev-tools-01"
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "/subscriptions/a986816a-9bbc-44b7-ba43-d72505ca9c0c/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
+    subnet_id                     = "/subscriptions/4524c968-952e-4958-b76b-acf5f38bef72/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
     private_ip_address_allocation = "Dynamic"
      
   }
@@ -117,12 +114,12 @@ resource "azurerm_linux_virtual_machine" "vm-sc-vpttools01" {
 
 resource "azurerm_network_interface" "nic-01-sc-vptilmt01" {
   name                = "nic-01-sc-vptilmt01"
-  location            = "South Central US"
+  location            = "eastus"
   resource_group_name = "rg-sc-cdw-vpt-dev-tools-ilmt-01"
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "/subscriptions/a986816a-9bbc-44b7-ba43-d72505ca9c0c/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
+    subnet_id                     = "/subscriptions/4524c968-952e-4958-b76b-acf5f38bef72/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
     private_ip_address_allocation = "Dynamic"
      
   }
@@ -164,7 +161,7 @@ resource "azurerm_linux_virtual_machine" "vm-sc-vptilmt01" {
 
 resource "azurerm_managed_disk" "md-01-sc-d-vptilmt01" {
   name                 = "md-01-sc-d-vptilmt01"
-  location             = "South Central US"
+  location             = "eastus"
   resource_group_name  = "rg-sc-cdw-vpt-dev-tools-ilmt-01"
   storage_account_type = "StandardSSD_LRS"
   create_option        = "Empty"
@@ -182,12 +179,13 @@ resource "azurerm_virtual_machine_data_disk_attachment" "vptilmt01-attach" {
 ##### Windows VM Start #####
 resource "azurerm_network_interface" "nic-01-sc-vpttools02" {
   name                = "nic-01-sc-vpttools02"
-  location            = "South Central US"
+  location            = "eastus"
   resource_group_name = "rg-sc-cdw-vpt-dev-tools-01"
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "/subscriptions/a986816a-9bbc-44b7-ba43-d72505ca9c0c/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
+    subnet_id                     = "/subscriptions/4524c968-952e-4958-b76b-acf5f38bef72/resourceGroups/rg-sc-cdw-vpt-dev-tools-01/providers/Microsoft.Network/virtualNetworks/vnet-sc-cdw-vpt-dev-tools-01/subnets/snet-sc-cdw-vpt-dev-tools-01"
+
     private_ip_address_allocation = "Dynamic"
      
   }
