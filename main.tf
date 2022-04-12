@@ -65,7 +65,7 @@ resource "azurerm_windows_virtual_machine" "vm-sc-vpttools02" {
   location                        = azurerm_network_interface.nic-01-sc-vpttools02.location
   size                            = "Standard_F1s"
   admin_username                  = "vmadmin"
-  admin_password                  = " "
+  admin_password                  = "Adminpw001!"
   tags                            = {
                                       Backup ="Daily"
                                     }
