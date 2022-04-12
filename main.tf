@@ -9,7 +9,7 @@ provider "azurerm" {
 ##### Create Resource Group #####
 resource "azurerm_resource_group" "rg-tools" {
   name     = "rg-sc-cdw-vpt-dev-tools-01"
-  location = "South Central US"
+  location = "eastus"
 }
 
 
@@ -48,7 +48,7 @@ resource "azurerm_subnet_network_security_group_association" "assoc-tools-01" {
 ##### Windows VM Start #####
 resource "azurerm_network_interface" "nic-01-sc-vpttools02" {
   name                = "nic-01-sc-vpttools02"
-  location            = "South Central US"
+  location            = "eastus"
   resource_group_name = "rg-sc-cdw-vpt-dev-tools-01"
 
   ip_configuration {
