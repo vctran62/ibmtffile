@@ -63,7 +63,7 @@ resource "azurerm_windows_virtual_machine" "vm-sc-vpttools02" {
   name                            = "sc-vpttools02"
   resource_group_name             = azurerm_network_interface.nic-01-sc-vpttools02.resource_group_name
   location                        = azurerm_network_interface.nic-01-sc-vpttools02.location
-  size                            = "Standard_B2s"
+  size                            = "Standard_F1s"
   admin_username                  = "vmadmin"
   admin_password                  = " "
   tags                            = {
