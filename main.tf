@@ -115,7 +115,7 @@ resource "azurerm_linux_virtual_machine" "vm-sc-vpttools01" {
 resource "azurerm_network_interface" "nic-01-sc-vptilmt01" {
   name                = "nic-01-sc-vptilmt01"
   location            = "eastus"
-  resource_group_name = "rg-sc-cdw-vpt-tools-01"
+  resource_group_name = "rg-sc-cdw-vpt-dev-tools-01"
 
   ip_configuration {
     name                          = "internal"
@@ -162,7 +162,7 @@ resource "azurerm_linux_virtual_machine" "vm-sc-vptilmt01" {
 resource "azurerm_managed_disk" "md-01-sc-d-vptilmt01" {
   name                 = "md-01-sc-d-vptilmt01"
   location             = "eastus"
-  resource_group_name  = "rg-sc-cdw-vpt-tools-01"
+  resource_group_name  = "rg-sc-cdw-vpt-dev-tools-01"
   storage_account_type = "StandardSSD_LRS"
   create_option        = "Empty"
   disk_size_gb         = 128
